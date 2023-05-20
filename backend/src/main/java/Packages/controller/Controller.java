@@ -1,8 +1,7 @@
 package Packages.controller;
 
-import javax.swing.JOptionPane;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +14,7 @@ import Packages.model.Client;
 import Packages.repository.ClientRepository;
 
 @RestController
+@CrossOrigin(originPatterns = "*")
 public class Controller {
 
 	@Autowired
