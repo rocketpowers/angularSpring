@@ -1,1 +1,0 @@
-empregacao do *ngif=!   para desabitar os botes com variavel no componente principal
