@@ -12,11 +12,10 @@ export class ClientService {
 private url:string = 'http://localhost:8080';
 
 
-
   constructor(private http: HttpClient) { }
 
 select ():Observable<Client[]>{
-  return this.http.get<Client[]>(this.url);
+  return this.http.get<Client[]>(this.url+'/list');
 }
 
 

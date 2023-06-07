@@ -19,38 +19,30 @@ public class Controller {
 
 	@Autowired
 	private ClientRepository repository;
-	
+
 	@PostMapping("/register")
 	public Client register(@RequestBody Client savClient) {
-		
 		System.out.println("user save sucessfull");
-		
-		//JOptionPane.showMessageDialog(null, "user save sucessfull");
-		
-		
-		return repository.save(savClient) ;
-		
+		return repository.save(savClient);
+
 	}
 
 	@GetMapping("/list")
-	public Iterable<Client> list() {
+	public Iterable<Client> select() {
 		return repository.findAll();
 
 	}
-	
+
 	@PutMapping("/edit")
 	public Client edit(@RequestBody Client editClient) {
 		return repository.save(editClient);
 	}
-	
-	@DeleteMapping("/{id}")
+
+	@DeleteMapping("/delete")
 	public void del(@PathVariable long id) {
 		repository.deleteById(id);
 		System.out.println("user removed sucessfull");
-		//JOptionPane.showInputDialog("user removed sucessfull");
+		// JOptionPane.showInputDialog("user removed sucessfull");
 	}
-	
-	
 
-	
 }

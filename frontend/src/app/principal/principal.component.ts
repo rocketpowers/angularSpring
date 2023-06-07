@@ -17,9 +17,7 @@ export class PrincipalComponent {
 
   select(): void {
 
-    //this.service.select().subscribe(returnn=> this.clients=returnn);
-
-    this.service.select().subscribe(returno => this.clients = returno);
+    this.service.select().subscribe(retorno => this.clients = retorno);
 
   }
   ngOnInit() {
