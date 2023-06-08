@@ -8,17 +8,19 @@ import { Client } from '../model/Client';
 })
 export class ClientService {
 
-//url da api
-private url:string = 'http://localhost:8080';
+  //url da api
+  private url: string = 'http://localhost:8080';
 
 
   constructor(private http: HttpClient) { }
 
-select ():Observable<Client[]>{
-  return this.http.get<Client[]>(this.url+'/list');
-}
+  select(): Observable<Client[]> {
+    return this.http.get<Client[]>(this.url + '/list');
+  }
 
 
+  register(obj: Client): Observable<Client> {
+    return this.http.post<Client>(this.url + '/register', obj);
 
-
+  }
 }

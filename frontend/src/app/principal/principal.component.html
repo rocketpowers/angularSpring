@@ -2,21 +2,23 @@
 
     <img src="assets/client.png">
 
-    <input type="text" placeholder="Name" class="form-control">
-    <input type="number" placeholder="Age" class="form-control">
-    <input type="text" placeholder="City" class="form-control">
+    <input type="text"   placeholder="Name" class="form-control" name="name" [(ngModel)]="client.name"> 
+    <input type="number" placeholder="Age"  class="form-control" name="age"  [(ngModel)]="client.age">
+    <input type="text"   placeholder="City" class="form-control" name="city" [(ngModel)]="client.city">
 
-    <input type="button" value="Register" *ngIf="btnRegister" class="btn btn-primary">
-    <input type="button" value="Update" *ngIf="!btnRegister" class="btn btn-warning">
-    <input type="button" value="Delete" *ngIf="!btnRegister" class="btn btn-danger">
-    <input type="button" value="Cancel" *ngIf="!btnRegister" class="btn btn-secondary">
+    <input type="button" value="Register" *ngIf= "btnRegister"  class= "btn btn-primary" (click)= "register()">
+    <input type="button" value="Update"   *ngIf= "!btnRegister" class= "btn btn-warning" (click)= "register()">
+    <input type="button" value="Delete"   *ngIf= "!btnRegister" class= "btn btn-danger" (click)= "register()">
+    <input type="button" value="Cancel"   *ngIf= "!btnRegister" class= "btn btn-secondary" (click)= "register()">
 
 </form>
+
+<!--<h1>{{client | json}}</h1>-->
 
 <table class="table">
     <thead>
         <tr>
-            <th>#</th>
+            <th>#</th> 
             <th>name</th>
             <th>age</th>
             <th>city</th>
@@ -25,16 +27,17 @@
     </thead>
 
     <tbody>
+ 
+        <tr *ngFor="let savClients of clients; index as i">
 
-        <tr *ngFor="let savClients of clients">
-
-            <td></td>
+            <td>{{i+1}}</td>
             <td>{{savClients.name}}</td>
             <td>{{savClients.age}}</td>
             <td>{{savClients.city}}</td>
-            <td><button class="btn btn-sucess">Select</button></td>
+            <td><button class="btn btn-success">Select</button></td>
+
+            </tr>
 
     </tbody>
-
 
 </table>

@@ -38,7 +38,7 @@ public class Controller {
 		return repository.save(editClient);
 	}
 
-	@DeleteMapping("/delete")
+	@DeleteMapping("/{id}")
 	public void del(@PathVariable long id) {
 		repository.deleteById(id);
 		System.out.println("user removed sucessfull");
