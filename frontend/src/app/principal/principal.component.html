@@ -6,10 +6,10 @@
     <input type="number" placeholder="Age"  class="form-control" name="age"  [(ngModel)]="client.age">
     <input type="text"   placeholder="City" class="form-control" name="city" [(ngModel)]="client.city">
 
-    <input type="button" value="Register" *ngIf= "btnRegister"  class= "btn btn-primary" (click)= "register()">
-    <input type="button" value="Update"   *ngIf= "!btnRegister" class= "btn btn-warning" (click)= "update()">
-    <input type="button" value="Delete"   *ngIf= "!btnRegister" class= "btn btn-danger" (click)= "remove()" >
-    <input type="button" value="Cancel"   *ngIf= "!btnRegister" class= "btn btn-secondary">
+    <input type="button" value="Register" *ngIf= "btnRegister"  class= "btn btn-primary"   (click)= "register()">
+    <input type="button" value="Update"   *ngIf= "!btnRegister" class= "btn btn-warning"   (click)= "update()">
+    <input type="button" value="Delete"   *ngIf= "!btnRegister" class= "btn btn-danger"    (click)= "remove()" >
+    <input type="button" value="Cancel"   *ngIf= "!btnRegister" class= "btn btn-secondary" (click)= "cancel()">
 
 </form>
 

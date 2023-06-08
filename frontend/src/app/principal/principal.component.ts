@@ -103,7 +103,20 @@ export class PrincipalComponent {
       });
 
   }
-  
+
+  cancel():void{
+
+    //clean form
+    this.client=new Client();
+    //visibili buttons
+    this.btnRegister=true;
+    //visibili table
+    this.table=true;
+
+  }
+
+
+
   ngOnInit() {
 
     this.select();
