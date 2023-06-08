@@ -64,6 +64,10 @@ export class PrincipalComponent {
 
         this.clients[position] = retorno;
 
+        //clean form
+        this.client = new Client();
+
+
         this.btnRegister = true;
 
         this.table = true;
@@ -71,16 +75,35 @@ export class PrincipalComponent {
         alert('alter sucessfulll');
 
 
+      });
+  }
+
+  remove(): void {
+
+    this.service.delete(this.client.id)
+      .subscribe(retorno => {
+
+        let position = this.clients.findIndex(obj => {
+          return obj.id == this.client.id;
+        });
+
+        this.clients.splice(position, 1);
+
+        //clean form
+        this.client = new Client();
 
 
+        this.btnRegister = true;
 
+        this.table = true;
+
+        alert('removed sucessfulll');
 
 
       });
 
   }
-
-
+  
   ngOnInit() {
 
     this.select();
