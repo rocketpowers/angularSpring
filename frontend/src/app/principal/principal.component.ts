@@ -13,8 +13,13 @@ export class PrincipalComponent {
 
   client = new Client();
 
-
   btnRegister: boolean = true;
+
+
+  //variavel visibilidade
+  table: boolean = true;
+
+
 
   clients: Client[] = [];
 
@@ -28,10 +33,26 @@ export class PrincipalComponent {
 
   register(): void {
     this.service.register(this.client)
-      .subscribe(retorno => { this.clients.push(retorno); });
+      .subscribe(retorno => {
+        this.clients.push(retorno);
+        this.client = new Client();
+        alert('client register sucessfull')
+      });
 
   }
 
+
+  selectClient(position: number): void {
+
+    this.client = this.clients[position];
+
+    this.btnRegister = false;
+
+    this.table = false;
+
+
+
+  }
 
   ngOnInit() {
 
