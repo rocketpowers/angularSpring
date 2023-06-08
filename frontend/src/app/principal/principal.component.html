@@ -7,7 +7,7 @@
     <input type="text"   placeholder="City" class="form-control" name="city" [(ngModel)]="client.city">
 
     <input type="button" value="Register" *ngIf= "btnRegister"  class= "btn btn-primary" (click)= "register()">
-    <input type="button" value="Update"   *ngIf= "!btnRegister" class= "btn btn-warning">
+    <input type="button" value="Update"   *ngIf= "!btnRegister" class= "btn btn-warning" (click)= "update()">
     <input type="button" value="Delete"   *ngIf= "!btnRegister" class= "btn btn-danger" >
     <input type="button" value="Cancel"   *ngIf= "!btnRegister" class= "btn btn-secondary">
 

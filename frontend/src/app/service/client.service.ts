@@ -23,4 +23,10 @@ export class ClientService {
     return this.http.post<Client>(this.url + '/register', obj);
 
   }
+  update(obj: Client): Observable<Client> {
+    return this.http.put<Client>(this.url + '/edit', obj);
+
+  }
+
+
 }

@@ -50,9 +50,36 @@ export class PrincipalComponent {
 
     this.table = false;
 
+  }
 
+  update(): void {
+
+    this.service.update(this.client)
+      .subscribe(retorno => {
+
+        let position = this.clients.findIndex(obj => {
+          return obj.id == retorno.id;
+
+        });
+
+        this.clients[position] = retorno;
+
+        this.btnRegister = true;
+
+        this.table = true;
+
+        alert('alter sucessfulll');
+
+
+
+
+
+
+
+      });
 
   }
+
 
   ngOnInit() {
 
